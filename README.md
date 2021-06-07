@@ -17,3 +17,4 @@
 
 ![xnumber](img/xnumber.gif)
 
+相关项目：[RIME键道输入法](https://gitee.com/xkinput/Rime_JD)
