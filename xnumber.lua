@@ -1,14 +1,14 @@
 --[[
-xnumber.lua: realize a yong-style number typing experience in RIME
+xnumber.lua: a yong-style number typing experience in RIME
 usage:
-0. this script is intended for xkjd6 but also work for other schemas (may need some custimizations)
-1. place this script in `rime\lua`
-2. modify `rime\rime.lua` by adding a line like `number_translator = require("numberx")`
-3. modify your schema (like `xkjd6.schema.yaml`) by adding an item like `- lua_translator@number_translator` under the `engine/translators` section
-4. re-deploy RIME and enjoy (the default trigger key is `=`)
+1. Download and put the `xnumber.lua` script into `RIME_USER_DATA/lua/` folder.
+2. Modify (or create if not existing) `RIME_USER_DATA/rime.lua` by adding one line: `number_translator = require("numberx")`.
+3. Modify your schema (like `xkjd6.schema.yaml`) by adding an item like `- lua_translator@number_translator` under the `engine/translators` section. Attention: Since this script use `=` as default trigger key, you should check if it conflicts with your schema.
+4. Re-deploy RIME and enjoy.
 change log:
 v0.0.1(20201010) - initial version written by thXnder(别打脸)
 v0.0.2(20201213) - just delete some unneccessary comments
+v0.0.3(20220223) - revise comments
 --]]
 
 local function speakLiterally(str, valMap)

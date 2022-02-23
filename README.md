@@ -1,20 +1,20 @@
-# 项目介绍
+# Introduction
 
-收集一些自制或修改的RIME lua脚本。目前包含以下脚本：
+Thanks to [librime-lua](https://github.com/hchunhui/librime-lua), users can extend [RIME](https://rime.im) functions with Lua scripts.
+
+This repository contains some (currently only one) Lua scripts that I wrote or modified for RIME and [RIME_JD](https://gitee.com/xkinput/Rime_JD):
 
 ## xnumber.lua
 
-功能：实现仿小小输入法的特殊输入模式。用`=`触发。
+### Features
 
-用法：
-
-1. 把脚本放到 `rime\lua`。
-2. 修改 `rime\rime.lua` ，添加一行： `number_translator = require("numberx")`
-3. 修改方案文件（如 `xkjd6.schema.yaml`），在`engine/translators`下面添加一项： `- lua_translator@number_translator` 
-4. 重新部署。
-
-预览：
+A yong-style number typing experience in RIME. Triggered via `=` by default.
 
 ![xnumber](img/xnumber.gif)
 
-相关项目：[RIME键道输入法](https://gitee.com/xkinput/Rime_JD)
+### Usage
+
+1. Download and put the `xnumber.lua` script into `RIME_USER_DATA/lua/` folder.
+2. Modify (or create if not existing) `RIME_USER_DATA/rime.lua` by adding one line: `number_translator = require("numberx")`.
+3. Modify your schema (like `xkjd6.schema.yaml`) by adding an item like `- lua_translator@number_translator` under the `engine/translators` section. Attention: Since this script use `=` as default trigger key, you should check if it conflicts with your schema.
+4. Re-deploy RIME and enjoy.
